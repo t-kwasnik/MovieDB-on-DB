@@ -1,0 +1,8 @@
+<div class = "record"><a href = "/movies"><%= "#{@movie["title"]} &nbsp;&nbsp;&nbsp;[#{@movie["genre"]}] &nbsp;&nbsp;&nbsp;<em>#{@movie["studio"]}</em>"%></a></div>
+
+<ul>
+<% @actors_list.each do |actor| %>
+<li><div class = "record"><a href = "/actors/<%= actor["actor_id"]%>"><%= actor["actor"]%> <span>as <%= actor["role"]%></span> </a></div></li>
+<% end %>
+</ul>
+

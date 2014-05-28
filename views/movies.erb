@@ -1,0 +1,24 @@
+<div class = "table_container">
+<table>
+<thead>
+   <tr >
+    <td class = "table_record_header"><a href = "/movies?order=title">Title</a></td>
+    <td class = "table_record_header"><a href = "/movies?order=year">Year</a></td>
+    <td class = "table_record_header"><a href = "/movies?order=rating">Rating</a></td>
+    <td class = "table_record_header"><a href = "/movies?order=genre">Genre</a></td>
+    <td class = "table_record_header"><a href = "/movies?order=studio">Studio</a></td>
+  </tr>
+</thead>
+<% @movies.each do |movie| %>
+<tr>
+  <td class = "table_record"><a href = "/movies/<%= movie["id"]%>"><%= movie["title"] %></a></td>
+  <td class = "table_record"><%= movie["year"]%></td>
+  <td class = "table_record"><%= movie["rating"]%></td>
+  <td class = "table_record"><%= movie["genre"]%></td>
+  <td class = "table_record"><%= movie["studio"]%></td>
+</tr>
+<% end %>
+</table>
+</div>
+<div class = "nav_bar"><a class = "nav" href = "/movies?order=<%= @order%>&page=<%= @page - 1 == 0 ? @page : @page -1 %>">Prev</a><a class = "nav" href = "/movies?order=<%= @order%>&page=<%= @page + 1 == 0 ? @page : @page +1 %>">Next</a></div>
+

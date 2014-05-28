@@ -1,0 +1,5 @@
+<ul>
+<% @actors[0..40].each do |actor| %>
+<li><div class = "record"><a href = "/actors/<%= actor["id"]%>"><%= actor["name"]%></a><span>&nbsp;&nbsp;&nbsp;<%= actor["count"]%> Movies</span></div></li>
+<% end %>
+</ul>
